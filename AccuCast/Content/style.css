@@ -1,0 +1,384 @@
+﻿/*COLOR PALATTE:
+    SUNNY YELLOW GOLD: rgb(240, 219, 53) / #f0db35
+    DEEP SKY BLUE: rgb(0, 191, 255) / #00bfff
+    WHITE: rgb(255, 255, 255) / #ffffff
+    STORM BLUE: rgb(50, 62, 75) / #323e4b
+*/
+
+/*FONT IMPORTS*/
+@import url('https://fonts.googleapis.com/css?family=Rubik:300,400,500,700,900');
+
+/*GENERAL*/
+html, body {
+    width: 100%;
+    margin: 0px;
+    font-size: 16px;
+    overflow-x: hidden;
+}
+
+* {
+    font-family: 'Rubik', sans-serif !important;
+    -webkit-transition: all .25s ease;
+    -moz-transition: all .25s ease;
+    -o-transition: all .25s ease;
+    transition: all .25s ease;
+}
+
+*::-webkit-scrollbar {
+  width: 1em;
+}
+
+*::-webkit-scrollbar-track {
+  background-color: white;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #00bfff;
+  -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.5);
+}
+
+.flextainer {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.err {
+    font-weight: 600;
+    color: #00bfff;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+.emp1 {
+    color: rgb(240, 219, 53);
+    font-size: 1.25em;
+    font-weight: 700;
+}
+
+.emp2 {
+    color: #00bfff;
+}
+
+.btn1 {
+    padding: .5em 1em;
+    font-size: 1.45em;
+    font-weight: 600;
+    white-space: normal;
+    color: #323e4b;
+    background-color: rgb(240, 219, 53);
+    border: none;
+    border-radius: 8px;
+}
+
+    .btn1:hover, .btn1:active, .btn1:focus {
+        cursor: pointer;
+        font-size: 1.6em;
+        color: #000;
+        background-color: rgb(0, 191, 255);
+        outline: none;
+        -webkit-box-shadow: -6px 6px 6px -2px rgba(0,0,0, .5);
+        -moz-box-shadow: -6px 6px 6px -2px rgba(0,0,0, .5);
+        box-shadow: -6px 6px 6px -2px rgba(0,0,0, .5);
+        -webkit-transition: all .25s ease;
+        -moz-transition: all .25s ease;
+        -o-transition: all .25s ease;
+        transition: all .25s ease;
+    }
+
+/*MODAL*/
+.modal {
+    overflow-y: hidden;
+}
+
+.modal-header{
+    border-bottom: none;
+}
+.modal-body {
+    max-height: 50vh;
+    font-size: 1em;
+    font-weight: 300;
+    overflow-y: auto;
+}
+
+.modal-footer{
+    border-top: none;
+}
+
+.modal-btn{
+    background-color: #323e4b;
+    color: rgb(240, 219, 53);
+}
+
+#thanks img{
+    max-width: 150px;
+    height: auto;
+}
+
+/*CUSTOM CHECKBOX*/
+
+.input-btn {
+    justify-content: center;
+}
+
+    .input-btn input[type=checkbox] {
+        display: none;
+    }
+
+    .input-btn label {
+        display: inline-block;
+        cursor: pointer;
+        position: relative;
+        outline: none;
+        padding-right: 30px;
+    }
+
+        .input-btn label:before {
+            content: "";
+            display: inline-block;
+            box-sizing: border-box;
+            width: 20px;
+            height: 20px;
+            position: absolute;
+            left: 0;
+            top: 1px;
+            color: transparent;
+            border: 2px solid rgb(240, 219, 53);
+            background-color: transparent;
+        }
+
+    .input-btn input[type=checkbox] + label:before {
+        border-radius: 4px;
+    }
+
+    .input-btn input[type=checkbox] + label:hover:before,
+    .input-btn input[type=checkbox] + label:focus:before {
+        background-color: rgb(240, 219, 53);
+        -webkit-transition: background-color .25s ease;
+        -moz-transition: background-color .25s ease;
+        -o-transition: background-color .25s ease;
+        transition: background-color .25s ease;
+    }
+
+
+    .input-btn input[type=checkbox]:checked + label:before {
+        content: '\2713';
+        line-height: 100%;
+        text-align: center;
+        font-size: 100%;
+        font-weight: bolder;
+        color: #323e4b;
+        background-color: rgb(240, 219, 53);
+        -webkit-transition: color .25s ease;
+        -moz-transition: color .25s ease;
+        -o-transition: color .25s ease;
+        transition: color .25s ease;
+    }
+
+/*NAVBAR*/
+.nav-style {
+    min-height: 4em;
+    font-weight: 500;
+    color: #fff;
+    background: -webkit-linear-gradient(rgb(50, 62, 75) 2.25em, rgba(255, 255, 255,0));
+    background: -moz-linear-gradient(rgb(50, 62, 75) 2.25em, rgba(255, 255, 255,0));
+    background: linear-gradient(rgb(50, 62, 75) 2.25em, rgba(255, 255, 255,0));
+    border: none;
+}
+
+.navbar-collapse{
+    border: none;
+}
+
+.collapse-btn{
+    width: 2.5em;
+    height: 2.5em;
+    padding: 0px;
+    text-align: center;
+    font-weight: bolder;
+    color: white;
+    border: 2px solid white;
+    outline: none;
+}
+
+.collapse-btn:hover, .collapse-btn:focus, .collapse-btn:active{
+    background-color: rgba(0, 191, 255, .6);
+    color: #323e4b;
+    border-color: rgb(0, 191, 255);
+}
+
+   .navbar-nav{
+        margin-top: 0px;
+        margin-bottom: 0px;
+    }
+.nav li a {
+    padding: 22px 15px;
+}
+
+    .nav li a:hover, .nav li a:active, .nav li a:focus {
+        font-weight: 700;
+        color: #323e4b;
+        outline: none;
+        background-color: transparent;
+        -webkit-box-shadow: 0 4em 50px -25px rgb(0, 191, 255) inset;
+        -moz-box-shadow: 0 4em 50px -25px rgb(0, 191, 255) inset;
+        box-shadow: 0 4em 50px -25px rgb(0, 191, 255) inset;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+    }
+/*LANDING SECTION*/
+#landing {
+    width: 100%;
+    height: 100vh;
+    margin: 0px;
+    text-align: center;
+    color: #fff;
+    background-color: #00bfff;
+    background-image: url('http://i.imgur.com/lf8H6PF.jpg');
+    background-position: 75% top;
+    background-size: cover;
+}
+
+.overlay {
+    width: 100%;
+    height: 100%;
+    margin: 0px !important;
+    align-items: center;
+    justify-content: center;
+    margin: 0px -24px;
+    padding: 0px 24px;
+    background: rgba(50, 62, 75, .75);
+}
+
+
+.content {
+    padding: 0px;
+    text-align: center;
+    z-index: 2;
+}
+
+.headline {
+    font-size: 1.45em;
+    margin: 0px;
+    margin-bottom: calc(17vh - 1.45em);
+}
+
+
+#installform {
+    margin-top: -1.45em;
+}
+
+    #installform .input-btn {
+        margin-top: 1em;
+    }
+
+    #installform .btn1 {
+        margin-top: calc(17vh - 2.45em);
+    }
+
+/*LEARN MORE SECTION*/
+#learn {
+    text-align: center;
+}
+
+.feat-title {
+    font-size: 2em;
+    font-weight: 500;
+    color: rgb(240, 219, 53);
+    background-color: #323e4b;
+    margin-bottom: 24px;
+}
+
+input[type=text] {
+    max-width: 100%;
+    padding: .25em 8px;
+    font-size: 1.25em;
+    background-color: #fff;
+    border: none;
+}
+
+    input[type=text]:hover, input[type=text]:active, input[type=text]:focus {
+        outline: none;
+        background-color: #00bfff;
+        -webkit-box-shadow: 2px 2px 6px 0px #323e4b inset;
+        -moz-box-shadow: 2px 2px 6px 0px #323e4b inset;
+        box-shadow: 2px 2px 6px 0px #323e4b inset;
+        -webkit-transition: all .5s ease;
+        -moz-transition: all .5s ease;
+        -o-transition: all .5s ease;
+        transition: all .5s ease;
+    }
+/*MODALS*/
+.modal-dialog {
+    min-width: 75% !important;
+}
+
+.modal-open .navbar-fixed-top {
+    margin: 0px;
+}
+
+/*FOOTER*/
+footer{
+    padding: 8px 0px;
+    background-color: #323e4b;
+    color: #00bfff;
+}
+
+@media only screen and (min-width: 576px) {
+
+    .content {
+        width: 50%;
+        text-align: left;
+    }
+
+    .input-btn {
+        justify-content: flex-start;
+    }
+
+    .overlay {
+        background: rgba(50, 62, 75, .8);
+        justify-content: flex-start;
+    }
+
+        .overlay::before {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background-image: url('http://i.imgur.com/lf8H6PF.jpg');
+            background-position: 75% top;
+            background-size: cover;
+            -webkit-clip-path: polygon(100% -100%, 100% 200%, 50% 50%);
+            -clip-path: polygon(100% -100%, 100% 200%, 50% 50%);
+        }
+}
+
+@media only screen and (min-width: 768px) {
+    .headline {
+        font-size: 2em;
+    }
+
+    #installform .input-btn {
+        /*margin-top: 1em;*/
+    }
+
+    #installform .btn1 {
+        /*margin-top: calc(17vh - .45em);*/
+    }
+}
+
+@media only screen and (max-height: 400px){
+    .headline {
+        margin-top: 1em;
+    margin-bottom: 0px;
+}
+
+      #installform .btn1 {
+        margin-top: 1em;
+    }
+}

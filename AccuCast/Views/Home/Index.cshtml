@@ -1,0 +1,142 @@
+﻿@model AccuCast.Models.InstallModel
+@{
+    ViewBag.Title = "Home Page";
+}
+<div id="landing" class="row">
+    <div class="row overlay flextainer">
+        <div class="col-md-6 content">
+            <h1 class="headline">
+                <span class="emp1">ACCURATE</span> & <span class="emp1">EASY</span><br />
+                Daily Weather Alerts
+            </h1>
+
+            @using (Html.BeginForm(null, null, FormMethod.Post, new { id = "installform" }))
+            {
+                @Html.ValidationMessageFor(model => model.zip)<br />
+                @Html.ValidationMessageFor(model => model.acpt)<br />
+                    @Html.TextBoxFor(model => model.zip, null, new { @maxlength = "5", @placeholder = "Enter ZIP Code" })
+                    @Html.HiddenFor(model => model.acpt, new { @class = "agval" });
+                <span class="input-btn flextainer">
+                    <input type="checkbox" id="tos" value="agree" />
+                    <label for="tos" tabindex="0"></label>
+                    <span>I agree to the <a class="emp2" href="" data-toggle="modal" data-target="#TOSModal">terms of services</a></span>
+                </span>
+                <button type="submit" class="btn1">Install Now</button>
+            }
+        </div>
+    </div>
+</div>
+<!--TERMS OF SERVICE MODAL-->
+<div id="TOSModal" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2>Terms of Services</h2>
+            </div>
+            <div class="modal-body">
+                <p>
+                    Integer ultrices pulvinar sapien. Nam pretium, risus in pellentesque pretium,
+                    lectus augue volutpat nisi, vitae viverra tortor ex sit amet enim.
+                    Sed quis lectus lobortis odio tempus sodales id sit amet turpis.
+                    Donec a vulputate libero, ut congue dolor. Pellentesque eu vulputate augue,
+                    vel vehicula lectus. Pellentesque ac porttitor sem. Curabitur lobortis et arcu eget ornare.
+                    Sed rhoncus porta mauris eu auctor. Pellentesque faucibus auctor mollis. Suspendisse ac
+                    venenatis lacus. Pellentesque lectus sapien, eleifend vel nisi nec, molestie tempus purus.
+                </p>
+                <p>
+                    Vivamus ultrices dictum euismod. Suspendisse urna odio, maximus pellentesque vehicula non,
+                    rhoncus eu dolor. Aliquam erat volutpat. Nullam nec velit mi. Ut consectetur faucibus fringilla.
+                    Fusce fermentum ipsum vel urna mattis, eget viverra elit viverra. Curabitur vulputate quam sed
+                    urna laoreet tempus. Maecenas eleifend nisl non eros dapibus, et sodales risus pharetra.
+                    Donec pellentesque accumsan diam vel dictum. Duis mollis dolor quis justo blandit pellentesque.
+                    Cras at mollis tortor. Fusce tristique sit amet sem suscipit porta. Etiam id auctor nisi.
+                    Aenean a risus nec metus volutpat varius vitae id enim.
+                </p>
+                <p>
+                    Aliquam erat volutpat. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere
+                    cubilia Curae; Pellentesque lobortis lectus ut nunc varius vehicula. Suspendisse potenti. Nulla
+                    purus ante, commodo a vestibulum a, porta tristique metus. Aliquam ut neque et nisi placerat
+                    aliquet eget sed nibh. Proin dictum nibh vel tempor tristique. Duis elementum hendrerit facilisis.
+                    Sed dignissim, tortor quis cursus ullamcorper, sapien tortor fermentum justo, varius efficitur
+                    lacus nibh quis risus. Sed commodo a nibh ut vestibulum. Nullam et laoreet quam. Nulla facilisi.
+                    Nullam vel suscipit eros, vitae dignissim massa. Ut facilisis, justo ut commodo dapibus, nulla
+                    libero volutpat nisl, non fringilla urna est vitae velit. Vivamus malesuada sed lacus quis
+                    varius.
+                </p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modal-btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--LEARN MORE MODAL-->
+<div id="learn" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h2>Why AccuCast</h2>
+            </div>
+            <div class="modal-body">
+                <div class="row">
+                    <div class="feature col-md-4">
+                        <div class="feat-title">
+                            Easy
+                        </div>
+                        <div class="feat-body">
+                            Enter your zip code and install. It's that easy
+                            to get the latest weather weather reports sent directly
+                            to your email
+                        </div>
+                    </div>
+                    <div class="feature col-md-4">
+                        <div class="feat-title">
+                            Accurate
+                        </div>
+                        <div class="feat-body">
+                            AccuCast's forecasts are up to 94% accurate
+                            so you can be confident in how you plan your
+                            day
+                        </div>
+                    </div>
+                    <div class="feature col-md-4">
+                        <div class="feat-title">
+                            Current
+                        </div>
+                        <div class="feat-body">
+                            We stay up-to-date and give you the latest weather
+                            reports so you can be ready for rain or shine
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modal-btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Thanks MODAL-->
+<div id="thanks" class="modal fade" role="dialog">
+    <div class="modal-dialog modal-lg">
+        <!-- Modal content-->
+        <div class="modal-content text-center">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+            </div>
+            <div class="modal-body">
+                <img src="https://www.loanadda.com/templates/personal-loan/images/success-checkmark.gif" />
+                <h1>@TempData["notice"]</h1>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default modal-btn" data-dismiss="modal">Close</button>
+            </div>
+        </div>
+    </div>
+</div>
